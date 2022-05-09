@@ -1,0 +1,27 @@
+.actordetails {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.roles {
+  margin-top: 3rem;
+}
+
+.role-invisible {
+  display: none;
+}
+
+.mat-nested-tree-node div[role="group"] {
+  padding-left: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.roles-tree div[role="group"] > .mat-tree-node {
+  padding-left: 1rem;
+  border-top: 0.1rem solid #242424;
+}
+
+.roles-tree div[role="group"] > .mat-tree-node:hover {
+  background-color: #242424;
+}

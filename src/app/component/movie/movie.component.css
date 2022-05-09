@@ -1,0 +1,22 @@
+.moviedetails {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.cast {
+  margin-top: 3rem;
+}
+
+.mat-row {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  background: #242424;
+}
+
+.mat-table {
+  width: 100%;
+}

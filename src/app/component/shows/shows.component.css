@@ -1,0 +1,10 @@
+.shows {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  display: block;
+}
+
+mat-chip:hover {
+  cursor: pointer;
+}

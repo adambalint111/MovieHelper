@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #303030;
+  color: #fff;
+}
+
+.results {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 30rem;
+  max-width: fit-content;
+  margin-top: 2rem;
+}
+
+.searchResultCard {
+  margin-top: 1rem;
+}
+
+.searchResultCard:hover {
+  cursor: pointer;
+  background-color: #242424;
+}

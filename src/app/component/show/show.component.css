@@ -1,0 +1,16 @@
+.showdetails {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.episodes {
+  margin-top: 3rem;
+}
+
+.episode-invisible {
+  display: none;
+}
+
+.mat-nested-tree-node div[role="group"] {
+  padding-left: 3rem;
+}

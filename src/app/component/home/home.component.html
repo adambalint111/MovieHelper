@@ -1,0 +1,34 @@
+<div class="home">
+  <h1>Browse the movies and shows by entering a keyword</h1>
+  <mat-form-field class="searchbar" appearance="fill">
+    <mat-label>Search for a keyword</mat-label>
+    <input matInput [(ngModel)]="keyword" placeholder="Ex. Batman" />
+  </mat-form-field>
+  <div class="searchfilters">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="searchType">
+      <mat-radio-button value="Movies">Movies</mat-radio-button>
+      <mat-radio-button value="Shows">Shows</mat-radio-button>
+    </mat-radio-group>
+    <button
+      mat-raised-button
+      class="submit-button"
+      color="accent"
+      (click)="onSearchSubmitted()"
+    >
+      Search
+    </button>
+  </div>
+  <div class="results">
+    <mat-card
+      class="searchResultCard"
+      *ngFor="let item of searchResults"
+      (click)="cardClicked(item.ids.slug)"
+    >
+      <mat-card-title-group>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>{{ item.year }}</mat-card-subtitle>
+        <img mat-card-sm-image src="../../../assets/screenplay.png" />
+      </mat-card-title-group>
+    </mat-card>
+  </div>
+</div>

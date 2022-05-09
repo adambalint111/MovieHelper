@@ -1,0 +1,52 @@
+<div class="moviedetails">
+  <h1>Movie Details</h1>
+  <mat-card>
+    <mat-card-title-group>
+      <mat-card-title>{{ movieDetails?.title }}</mat-card-title>
+      <mat-card-subtitle>{{ movieDetails?.tagline }}</mat-card-subtitle>
+      <img mat-card-lg-image src="../../../assets/screenplay.png" />
+    </mat-card-title-group>
+    <mat-card-content>
+      <h3>Released in: {{ movieDetails?.released }}</h3>
+      <h3>Runtime: {{ movieDetails?.runtime }} minutes</h3>
+      <h3>Rating: {{ movieDetails?.rating }}</h3>
+      <p>{{ movieDetails?.overview }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="chips">
+        <mat-chip-list>
+          <mat-chip *ngFor="let item of movieDetails?.genres">{{
+            item
+          }}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  <div class="cast">
+    <h1>Cast</h1>
+    <table mat-table [dataSource]="cast!">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Actor name</th>
+        <td mat-cell *matCellDef="let element">{{ element.person.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="character">
+        <th mat-header-cell *matHeaderCellDef>Character(s)</th>
+        <td mat-cell *matCellDef="let element">{{ element.character }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name', 'character']"></tr>
+      <tr
+        mat-row
+        (click)="onActorClicked(row.person.ids.slug)"
+        *matRowDef="let row; columns: ['name', 'character']"
+      ></tr>
+    </table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</div>
